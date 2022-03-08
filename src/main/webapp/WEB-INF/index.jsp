@@ -10,7 +10,7 @@
 <h1>EnergyMon - Welcome</h1>
 <hr />
 <p>Balance: </p>
-<p>Last reading: XX on YY</p>
+<p>Last reading: <s:property value="lastMeterReading.reading" /> on <s:property value="lastMeterReading.dateTimeTaken" /></p>
 <p>Last payment: XX on YY</p>
 <p>
     <a href="<s:url action='payment' />">Submit payment</a>

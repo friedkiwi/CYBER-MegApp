@@ -24,6 +24,7 @@ public class ReadingAction extends ActionSupport {
                 }
                 e.printStackTrace();
             }
+            return "saved";
         }
         return SUCCESS;
     }
