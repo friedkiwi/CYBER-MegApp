@@ -7,7 +7,7 @@
     <title>EnergyMon</title>
 </head>
 <body>
-<h1>Welcome To EnergyMon</h1>
+<h1>EnergyMon - Welcome</h1>
 <hr />
 <p>Balance: </p>
 <p>Last reading: XX on YY</p>
