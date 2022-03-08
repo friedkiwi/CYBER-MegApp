@@ -17,7 +17,7 @@
 <hr />
 
 <s:form action="reading">
-    <s:textfield name="reading" label="Current meter reading" />
+    <s:textfield name="meterReadingBean.reading" label="Current meter reading" />
     <s:submit value="Submit" />
 </s:form>
 
