@@ -6,7 +6,11 @@ import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class HibernateUtil {
+    private static Logger log = Logger.getLogger(HibernateUtil.class.getName());
     private static StandardServiceRegistry registry;
     private static SessionFactory sessionFactory;
 
@@ -18,7 +22,7 @@ public class HibernateUtil {
                 Metadata metadata = sources.getMetadataBuilder().build();
                 sessionFactory = metadata.getSessionFactoryBuilder().build();
             } catch (Exception e) {
-                e.printStackTrace();
+                log.log(Level.SEVERE,"Error while creating a new Hibernate SessionFactory.", e);
                 if (registry != null) {
                     StandardServiceRegistryBuilder.destroy(registry);
                 }

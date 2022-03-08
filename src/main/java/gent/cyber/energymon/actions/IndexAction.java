@@ -4,13 +4,15 @@ import com.opensymphony.xwork2.ActionSupport;
 import gent.cyber.energymon.HibernateUtil;
 import gent.cyber.energymon.models.MeterReading;
 import org.hibernate.Session;
-import org.hibernate.Transaction;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class IndexAction extends ActionSupport {
-    private MeterReading lastMeterReading;
+    private transient Logger log = Logger.getLogger(this.getClass().getName());
+
 
     @Override
     public String execute() {
@@ -18,11 +20,10 @@ public class IndexAction extends ActionSupport {
     }
 
     public MeterReading getLastMeterReading() {
-        lastMeterReading = new MeterReading();
+        MeterReading lastMeterReading = new MeterReading();
         lastMeterReading.setReading(0);
         lastMeterReading.setDateTimeTaken(LocalDateTime.now());
 
-        Transaction transaction = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             List<MeterReading> meterReadings = session.createQuery("from MeterReading ", MeterReading.class).list();
             for (MeterReading meterReading : meterReadings) {
@@ -30,9 +31,7 @@ public class IndexAction extends ActionSupport {
                     lastMeterReading = meterReading;
             }
         } catch (Exception e) {
-            if (transaction != null) {
-                transaction.rollback();
-            }
+            log.log(Level.SEVERE,"Error while querying meter reading database.", e);
         }
 
         return lastMeterReading;

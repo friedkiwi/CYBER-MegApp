@@ -7,8 +7,11 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import java.time.LocalDateTime;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class ReadingAction extends ActionSupport {
+    private transient Logger log = Logger.getLogger(this.getClass().getName());
     private MeterReading meterReadingBean;
     @Override
     public String execute() {
@@ -22,13 +25,14 @@ public class ReadingAction extends ActionSupport {
                 if (transaction != null) {
                     transaction.rollback();
                 }
-                e.printStackTrace();
+                log.log(Level.SEVERE,"Error while storing meter reading in database.", e);
             }
             return "saved";
         }
         return SUCCESS;
     }
 
+    @Override
     public void validate() {
         if (meterReadingBean == null) return;
         if (meterReadingBean.getReading() <= 0) {
