@@ -6,7 +6,6 @@ import gent.cyber.energymon.models.MeterReading;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
