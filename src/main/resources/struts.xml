@@ -13,6 +13,10 @@
         </action>
         <action name="payment" class="gent.cyber.energymon.actions.PaymentAction" method="execute">
             <result name="success">WEB-INF/payment.jsp</result>
+            <result name="input">WEB-INF/payment.jsp</result>
+            <result name="saved" type="redirect">
+                <param name="location">/</param>
+            </result>
         </action>
         <action name="reading" class="gent.cyber.energymon.actions.ReadingAction" method="execute">
             <result name="success">WEB-INF/reading.jsp</result>

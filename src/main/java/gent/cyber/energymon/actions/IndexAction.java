@@ -2,6 +2,7 @@ package gent.cyber.energymon.actions;
 
 import com.opensymphony.xwork2.ActionSupport;
 import gent.cyber.energymon.HibernateUtil;
+import gent.cyber.energymon.models.EnergyPayment;
 import gent.cyber.energymon.models.MeterReading;
 import org.hibernate.Session;
 
@@ -35,5 +36,22 @@ public class IndexAction extends ActionSupport {
         }
 
         return lastMeterReading;
+    }
+
+    public EnergyPayment getLastEnergyPayment() {
+        EnergyPayment lastEnergyPayment = new EnergyPayment();
+        lastEnergyPayment.setAmountPaid(0.0);
+        lastEnergyPayment.setDatePaymentMade(new Date(0));
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            List<EnergyPayment> energyPayments = session.createQuery("from EnergyPayment", EnergyPayment.class).list();
+            for (EnergyPayment energyPayment: energyPayments) {
+                if (energyPayment.getDatePaymentMade().getTime() > lastEnergyPayment.getDatePaymentMade().getTime()) {
+                    lastEnergyPayment = energyPayment;
+                }
+            }
+        } catch (Exception e) {
+            log.log(Level.SEVERE,"Error while querying payment database.", e);
+        }
+        return lastEnergyPayment;
     }
 }

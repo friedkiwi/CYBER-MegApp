@@ -10,8 +10,8 @@
 <h1>EnergyMon - Welcome</h1>
 <hr />
 <p>Balance: </p>
-<p>Last reading: <s:property value="lastMeterReading.reading" /> on <s:date name="lastMeterReading.dateTimeTaken" format="yyyy-MM-dd"/></p>
-<p>Last payment: XX on YY</p>
+<p>Last reading: <s:property value="getText('{0,number,#,##0.0}',{lastMeterReading.reading})"/> on <s:date name="lastMeterReading.dateTimeTaken" format="yyyy-MM-dd"/></p>
+<p>Last payment: EUR <s:property value="getText('{0,number,#,##0.00}',{lastEnergyPayment.amountPaid})"/> on <s:date name="lastEnergyPayment.datePaymentMade" format="yyyy-MM-dd"/></p>
 <p>
     <a href="<s:url action='payment' />">Submit payment</a>
     <a href="<s:url action='reading' />">Submit reading</a>
