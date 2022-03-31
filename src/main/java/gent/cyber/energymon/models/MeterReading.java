@@ -2,7 +2,7 @@ package gent.cyber.energymon.models;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.time.LocalDateTime;
+import java.util.Date;
 
 @Entity
 @Table(name = "readings")
@@ -18,9 +18,9 @@ public class MeterReading implements Serializable {
     private double reading;
 
     @Column(name = "moment", nullable = false)
-    private LocalDateTime dateTimeTaken;
+    private Date dateTimeTaken;
 
-    public LocalDateTime getDateTimeTaken() {
+    public Date getDateTimeTaken() {
         return dateTimeTaken;
     }
 
@@ -28,7 +28,7 @@ public class MeterReading implements Serializable {
 
     }
 
-    public MeterReading(double reading, LocalDateTime dateTimeTaken) {
+    public MeterReading(double reading, Date dateTimeTaken) {
         this.reading = reading;
         this.dateTimeTaken = dateTimeTaken;
     }
@@ -41,7 +41,7 @@ public class MeterReading implements Serializable {
         this.reading = reading;
     }
 
-    public void setDateTimeTaken(LocalDateTime dateTimeTaken) {
+    public void setDateTimeTaken(Date dateTimeTaken) {
         this.dateTimeTaken = dateTimeTaken;
     }
 

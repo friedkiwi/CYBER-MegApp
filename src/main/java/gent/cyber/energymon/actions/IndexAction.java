@@ -5,7 +5,7 @@ import gent.cyber.energymon.HibernateUtil;
 import gent.cyber.energymon.models.MeterReading;
 import org.hibernate.Session;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -22,7 +22,7 @@ public class IndexAction extends ActionSupport {
     public MeterReading getLastMeterReading() {
         MeterReading lastMeterReading = new MeterReading();
         lastMeterReading.setReading(0);
-        lastMeterReading.setDateTimeTaken(LocalDateTime.now());
+        lastMeterReading.setDateTimeTaken(new Date());
 
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             List<MeterReading> meterReadings = session.createQuery("from MeterReading ", MeterReading.class).list();

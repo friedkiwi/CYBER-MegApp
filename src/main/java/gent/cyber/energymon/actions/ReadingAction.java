@@ -7,6 +7,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -38,7 +39,7 @@ public class ReadingAction extends ActionSupport {
         if (meterReadingBean.getReading() <= 0) {
             addFieldError("meterReadingBean.reading", "Invalid meter reading");
         }
-        meterReadingBean.setDateTimeTaken(LocalDateTime.now());
+        meterReadingBean.setDateTimeTaken( new Date());
     }
 
     public MeterReading getMeterReadingBean() {
