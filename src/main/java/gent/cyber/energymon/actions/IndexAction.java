@@ -2,6 +2,7 @@ package gent.cyber.energymon.actions;
 
 import com.opensymphony.xwork2.ActionSupport;
 import gent.cyber.energymon.HibernateUtil;
+import gent.cyber.energymon.PaymentsUtil;
 import gent.cyber.energymon.models.EnergyPayment;
 import gent.cyber.energymon.models.MeterReading;
 import org.hibernate.Session;
@@ -12,7 +13,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class IndexAction extends ActionSupport {
-    private transient Logger log = Logger.getLogger(this.getClass().getName());
+    private transient final Logger log = Logger.getLogger(this.getClass().getName());
 
 
     @Override
@@ -21,21 +22,12 @@ public class IndexAction extends ActionSupport {
     }
 
     public MeterReading getLastMeterReading() {
-        MeterReading lastMeterReading = new MeterReading();
-        lastMeterReading.setReading(0);
-        lastMeterReading.setDateTimeTaken(new Date());
-
-        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            List<MeterReading> meterReadings = session.createQuery("from MeterReading ", MeterReading.class).list();
-            for (MeterReading meterReading : meterReadings) {
-                if (meterReading.getReading() > lastMeterReading.getReading())
-                    lastMeterReading = meterReading;
-            }
+        try {
+            return PaymentsUtil.getLastMeterReading();
         } catch (Exception e) {
             log.log(Level.SEVERE,"Error while querying meter reading database.", e);
+            return new MeterReading();
         }
-
-        return lastMeterReading;
     }
 
     public EnergyPayment getLastEnergyPayment() {
@@ -53,5 +45,9 @@ public class IndexAction extends ActionSupport {
             log.log(Level.SEVERE,"Error while querying payment database.", e);
         }
         return lastEnergyPayment;
+    }
+
+    public double getBalance() {
+        return PaymentsUtil.getPaymentBalance();
     }
 }
