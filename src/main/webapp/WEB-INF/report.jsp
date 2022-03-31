@@ -51,6 +51,11 @@
 
 <div class="container" role="main">
     <h1>EnergyMon - Report</h1>
+    <h2>Payments</h2>
+    <h2>Readings</h2>
+    <h2>Summary</h2>
+    <p>Balance: EUR <s:property value="getText('{0,number,#,##0.00}',{balance})"/> </p>
+    <p>Last reading: <s:property value="getText('{0,number,#,##0.0}',{lastMeterReading.reading})"/> on <s:date name="lastMeterReading.dateTimeTaken" format="yyyy-MM-dd"/></p>
 </div>
 </body>
 </html>
