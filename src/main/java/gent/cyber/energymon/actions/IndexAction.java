@@ -1,14 +1,11 @@
 package gent.cyber.energymon.actions;
 
 import com.opensymphony.xwork2.ActionSupport;
-import gent.cyber.energymon.HibernateUtil;
 import gent.cyber.energymon.PaymentsUtil;
+import gent.cyber.energymon.ReadingsUtil;
 import gent.cyber.energymon.models.EnergyPayment;
 import gent.cyber.energymon.models.MeterReading;
-import org.hibernate.Session;
 
-import java.util.Date;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -23,7 +20,7 @@ public class IndexAction extends ActionSupport {
 
     public MeterReading getLastMeterReading() {
         try {
-            return PaymentsUtil.getLastMeterReading();
+            return ReadingsUtil.getLastMeterReading();
         } catch (Exception e) {
             log.log(Level.SEVERE,"Error while querying meter reading database.", e);
             return new MeterReading();
@@ -31,20 +28,12 @@ public class IndexAction extends ActionSupport {
     }
 
     public EnergyPayment getLastEnergyPayment() {
-        EnergyPayment lastEnergyPayment = new EnergyPayment();
-        lastEnergyPayment.setAmountPaid(0.0);
-        lastEnergyPayment.setDatePaymentMade(new Date(0));
-        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            List<EnergyPayment> energyPayments = session.createQuery("from EnergyPayment", EnergyPayment.class).list();
-            for (EnergyPayment energyPayment: energyPayments) {
-                if (energyPayment.getDatePaymentMade().getTime() > lastEnergyPayment.getDatePaymentMade().getTime()) {
-                    lastEnergyPayment = energyPayment;
-                }
-            }
+        try {
+            return PaymentsUtil.getLastEnergyPayment();
         } catch (Exception e) {
-            log.log(Level.SEVERE,"Error while querying payment database.", e);
+            log.log(Level.SEVERE,"Error while querying meter reading database.", e);
+            return new EnergyPayment();
         }
-        return lastEnergyPayment;
     }
 
     public double getBalance() {

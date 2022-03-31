@@ -8,6 +8,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 
+
 public class PaymentsUtil {
     public static double getTotalAmountPaid() {
         double totalAmountPaid = 0.0;
@@ -21,19 +22,19 @@ public class PaymentsUtil {
         return totalAmountPaid;
     }
 
-    public static MeterReading getLastMeterReading() {
-        MeterReading lastMeterReading = new MeterReading();
-        lastMeterReading.setReading(0);
-        lastMeterReading.setDateTimeTaken(new Date());
+    public static EnergyPayment getLastEnergyPayment() {
+        EnergyPayment lastEnergyPayment = new EnergyPayment();
+        lastEnergyPayment.setAmountPaid(0.0);
+        lastEnergyPayment.setDatePaymentMade(new Date(0));
         Session session = HibernateUtil.getSessionFactory().openSession();
 
-        List<MeterReading> meterReadings = session.createQuery("from MeterReading ", MeterReading.class).list();
-        for (MeterReading meterReading : meterReadings) {
-            if (meterReading.getReading() > lastMeterReading.getReading())
-                lastMeterReading = meterReading;
+        List<EnergyPayment> energyPayments = session.createQuery("from EnergyPayment", EnergyPayment.class).list();
+        for (EnergyPayment energyPayment: energyPayments) {
+            if (energyPayment.getDatePaymentMade().getTime() > lastEnergyPayment.getDatePaymentMade().getTime()) {
+                lastEnergyPayment = energyPayment;
+            }
         }
-
-        return lastMeterReading;
+        return lastEnergyPayment;
     }
 
     public static double getKwhPrice() {
@@ -46,7 +47,7 @@ public class PaymentsUtil {
     }
 
     public static double getPaymentBalance() {
-        MeterReading lastMeterReading = getLastMeterReading();
+        MeterReading lastMeterReading = ReadingsUtil.getLastMeterReading();
         double totalAmountPaid = getTotalAmountPaid();
         return totalAmountPaid - (getKwhPrice() * lastMeterReading.getReading());
     }
