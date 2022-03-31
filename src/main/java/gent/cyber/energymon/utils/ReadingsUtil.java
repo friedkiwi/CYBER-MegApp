@@ -22,5 +22,9 @@ public class ReadingsUtil {
         return lastMeterReading;
     }
 
+    public static List<MeterReading> getAllMeterReadings() {
+        Session session = HibernateUtil.getSessionFactory().openSession();
 
+        return session.createQuery("from MeterReading ", MeterReading.class).list();
+    }
 }

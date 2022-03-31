@@ -50,4 +50,10 @@ public class PaymentsUtil {
         double totalAmountPaid = getTotalAmountPaid();
         return totalAmountPaid - (getKwhPrice() * lastMeterReading.getReading());
     }
+
+    public static List<EnergyPayment> getAllPayments() {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+
+        return session.createQuery("from EnergyPayment", EnergyPayment.class).list();
+    }
 }
