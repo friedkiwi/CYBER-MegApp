@@ -35,11 +35,15 @@
             <artifactId>hibernate-core</artifactId>
             <version>5.6.7.Final</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.hsqldb/hsqldb -->
         <dependency>
             <groupId>org.hsqldb</groupId>
             <artifactId>hsqldb</artifactId>
             <version>2.6.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.jgeppert.struts2.bootstrap</groupId>
+            <artifactId>struts2-bootstrap-plugin</artifactId>
+            <version>4.0.1</version>
         </dependency>
 
     </dependencies>

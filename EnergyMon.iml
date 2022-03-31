@@ -73,5 +73,7 @@
     <orderEntry type="library" name="Maven: org.jvnet.staxex:stax-ex:1.8" level="project" />
     <orderEntry type="library" name="Maven: com.sun.xml.fastinfoset:FastInfoset:1.2.15" level="project" />
     <orderEntry type="library" name="Maven: org.hsqldb:hsqldb:2.6.1" level="project" />
+    <orderEntry type="library" name="Maven: com.jgeppert.struts2.bootstrap:struts2-bootstrap-plugin:4.0.1" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.struts:struts-annotations:1.0.6" level="project" />
   </component>
 </module>
