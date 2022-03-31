@@ -1,8 +1,8 @@
 package gent.cyber.energymon.actions;
 
 import com.opensymphony.xwork2.ActionSupport;
-import gent.cyber.energymon.PaymentsUtil;
-import gent.cyber.energymon.ReadingsUtil;
+import gent.cyber.energymon.utils.PaymentsUtil;
+import gent.cyber.energymon.utils.ReadingsUtil;
 import gent.cyber.energymon.models.EnergyPayment;
 import gent.cyber.energymon.models.MeterReading;
 

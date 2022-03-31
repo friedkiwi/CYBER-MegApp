@@ -1,7 +1,7 @@
 package gent.cyber.energymon.actions;
 
 import com.opensymphony.xwork2.ActionSupport;
-import gent.cyber.energymon.PaymentsUtil;
+import gent.cyber.energymon.utils.PaymentsUtil;
 
 public class ReportAction extends ActionSupport {
     @Override

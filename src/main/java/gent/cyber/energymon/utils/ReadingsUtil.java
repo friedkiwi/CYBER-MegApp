@@ -1,4 +1,4 @@
-package gent.cyber.energymon;
+package gent.cyber.energymon.utils;
 
 import gent.cyber.energymon.models.MeterReading;
 import org.hibernate.Session;

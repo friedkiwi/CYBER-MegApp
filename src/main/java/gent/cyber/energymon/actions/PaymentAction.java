@@ -1,7 +1,7 @@
 package gent.cyber.energymon.actions;
 
 import com.opensymphony.xwork2.ActionSupport;
-import gent.cyber.energymon.HibernateUtil;
+import gent.cyber.energymon.utils.HibernateUtil;
 import gent.cyber.energymon.models.EnergyPayment;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -11,7 +11,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class PaymentAction extends ActionSupport {
-    private transient Logger log = Logger.getLogger(this.getClass().getName());
+    private transient final Logger log = Logger.getLogger(this.getClass().getName());
     private EnergyPayment energyPaymentBean;
 
     @Override

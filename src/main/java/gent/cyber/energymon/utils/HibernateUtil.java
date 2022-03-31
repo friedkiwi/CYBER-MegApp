@@ -1,4 +1,4 @@
-package gent.cyber.energymon;
+package gent.cyber.energymon.utils;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
@@ -10,7 +10,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class HibernateUtil {
-    private static Logger log = Logger.getLogger(HibernateUtil.class.getName());
+    private static final Logger log = Logger.getLogger(HibernateUtil.class.getName());
     private static StandardServiceRegistry registry;
     private static SessionFactory sessionFactory;
 
