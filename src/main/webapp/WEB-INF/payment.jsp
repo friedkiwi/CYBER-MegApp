@@ -17,7 +17,7 @@
     <hr />
 
     <s:form action="payment">
-        <s:textfield name="amountPaid" label="Amount paid" />
+        <s:textfield name="energyPaymentBean.amountPaid" label="Amount paid" />
         <s:submit value="Submit" />
     </s:form>
 

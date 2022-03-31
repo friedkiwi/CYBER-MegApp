@@ -2,7 +2,8 @@ package gent.cyber.energymon.models;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.time.LocalDateTime;
+import java.util.Date;
+
 
 @Entity
 @Table(name="payments")
@@ -19,9 +20,9 @@ public class EnergyPayment implements Serializable {
     private double amountPaid;
 
     @Column(name = "paidon")
-    private LocalDateTime datePaymentMade;
+    private Date datePaymentMade;
 
-    public EnergyPayment(double amountPaid, LocalDateTime datePaymentMade) {
+    public EnergyPayment(double amountPaid, Date datePaymentMade) {
         this.amountPaid = amountPaid;
         this.datePaymentMade = datePaymentMade;
     }
@@ -41,11 +42,11 @@ public class EnergyPayment implements Serializable {
         this.amountPaid = amountPaid;
     }
 
-    public LocalDateTime getDatePaymentMade() {
+    public Date getDatePaymentMade() {
         return datePaymentMade;
     }
 
-    public void setDatePaymentMade(LocalDateTime datePaymentMade) {
+    public void setDatePaymentMade(Date datePaymentMade) {
         this.datePaymentMade = datePaymentMade;
     }
 
