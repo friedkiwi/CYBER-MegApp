@@ -18,4 +18,17 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>EnergyMon Application</web-resource-name>
+            <url-pattern>/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>energymon-user</role-name>
+        </auth-constraint>
+    </security-constraint>
+    <login-config>
+        <auth-method>BASIC</auth-method>
+        <realm-name>EnergyMon</realm-name>
+    </login-config>
 </web-app>
