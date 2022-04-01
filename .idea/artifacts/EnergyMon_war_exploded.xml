@@ -42,6 +42,7 @@
           <element id="library" level="project" name="Maven: org.hsqldb:hsqldb:2.6.1" />
           <element id="library" level="project" name="Maven: com.jgeppert.struts2.bootstrap:struts2-bootstrap-plugin:4.0.1" />
           <element id="library" level="project" name="Maven: org.apache.struts:struts-annotations:1.0.6" />
+          <element id="library" level="project" name="Maven: org.mariadb.jdbc:mariadb-java-client:3.0.4" />
         </element>
       </element>
       <element id="directory" name="META-INF">
