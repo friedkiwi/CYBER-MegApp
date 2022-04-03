@@ -15,6 +15,7 @@
     </properties>
 
     <dependencies>
+        <!-- struts -->
         <dependency>
             <groupId>org.apache.struts</groupId>
             <artifactId>struts2-core</artifactId>
@@ -31,6 +32,18 @@
             <version>2.17.2</version>
         </dependency>
         <dependency>
+            <groupId>com.jgeppert.struts2.bootstrap</groupId>
+            <artifactId>struts2-bootstrap-plugin</artifactId>
+            <version>4.0.1</version>
+        </dependency>
+
+        <!-- database -->
+        <dependency>
+            <groupId>org.mariadb.jdbc</groupId>
+            <artifactId>mariadb-java-client</artifactId>
+            <version>3.0.4</version>
+        </dependency>
+        <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
             <version>5.6.7.Final</version>
@@ -40,16 +53,58 @@
             <artifactId>hsqldb</artifactId>
             <version>2.6.1</version>
         </dependency>
+
+        <!-- Spring Framework -->
         <dependency>
-            <groupId>com.jgeppert.struts2.bootstrap</groupId>
-            <artifactId>struts2-bootstrap-plugin</artifactId>
-            <version>4.0.1</version>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>5.3.18</version>
         </dependency>
         <dependency>
-            <groupId>org.mariadb.jdbc</groupId>
-            <artifactId>mariadb-java-client</artifactId>
-            <version>3.0.4</version>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>5.3.18</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>5.3.18</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>5.3.18</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+            <version>5.3.18</version>
+        </dependency>
+
+        <!-- Spring security framework -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-core</artifactId>
+            <version>5.6.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-taglibs</artifactId>
+            <version>5.6.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+            <version>5.6.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+            <version>5.6.2</version>
+        </dependency>
+
+
+
 
 
     </dependencies>
