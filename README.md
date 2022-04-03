@@ -8,6 +8,10 @@ Simple web application to keep track of EV charging energy consumption.
 * ~~Basic functionality~~
 * Basic authentication
 * SAML integration
+* code cleanup
+  * dependency version management
+  * sonarqube issue fixing
+  * acunetix/burp automated scan and fixes
 
 ### Phase 2: CYBER Meg-App
 * retool into CYBER Meg-App
