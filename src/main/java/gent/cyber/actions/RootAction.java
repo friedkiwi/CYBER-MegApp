@@ -1,4 +1,4 @@
-package cyber.gent.actions;
+package gent.cyber.actions;
 
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.convention.annotation.Action;
