@@ -7,7 +7,7 @@
         <property name="connection.driver_class">org.mariadb.jdbc.Driver</property>
         <property name="connection.url">jdbc:mariadb://localhost:3306/energymon</property>
         <property name="connection.username">energymon</property>
-        <property name="connection.password">pZqRJMfShZRFMNqb</property>
+        <property name="connection.password">changeme</property>
 
         <property name="dialect">org.hibernate.dialect.MariaDBDialect</property>
 
