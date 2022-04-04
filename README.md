@@ -9,7 +9,7 @@ Simple web application to keep track of EV charging energy consumption.
 * ~~Basic authentication~~
 * ~~Use templated pages~~
 * ~~Move into `/energymon` namespace~~
-* SAML integration
+* implement auth_az
 * code cleanup
   * ~~dependency version management~~
   * acunetix/burp automated scan and fixes
