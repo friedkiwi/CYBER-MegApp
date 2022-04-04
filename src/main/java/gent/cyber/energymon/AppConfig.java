@@ -29,7 +29,7 @@ public class AppConfig extends WebSecurityConfigurerAdapter {
         http
                 .authorizeRequests()
                     .antMatchers("/").access("hasRole('ROLE_USER')")
-                    .antMatchers("/reading.action").access("hasRole('ROLE_USER')")
+                    .antMatchers("/energymon/**").access("hasRole('ROLE_USER')")
                     .and()
                 .formLogin()
                     .loginPage("/auth/login.action")

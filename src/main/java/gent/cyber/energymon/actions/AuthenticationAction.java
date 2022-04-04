@@ -34,7 +34,7 @@ public class AuthenticationAction extends ActionSupport {
     }
 
     @Action(value = "welcome", results = {
-            @Result(name = SUCCESS, type="redirectAction", params = {"actionName", ""})
+            @Result(name = SUCCESS, type="redirectAction", params = {"namespace", "energymon", "actionName", "index"})
     })
     public String welcome() {
         return SUCCESS;

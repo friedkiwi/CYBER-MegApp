@@ -5,20 +5,29 @@ import gent.cyber.energymon.utils.PaymentsUtil;
 import gent.cyber.energymon.utils.ReadingsUtil;
 import gent.cyber.energymon.models.EnergyPayment;
 import gent.cyber.energymon.models.MeterReading;
+import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.Namespace;
+import org.apache.struts2.convention.annotation.Result;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+@Namespace("/energymon")
 public class IndexAction extends ActionSupport {
     private transient final Logger log = Logger.getLogger(this.getClass().getName());
 
 
     @Override
     public String execute() {
-        UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        log.warning("Username: " + userDetails.getUsername());
+        return SUCCESS;
+    }
+
+    @Action(value = "index", results = {
+            @Result(name = SUCCESS, location = "/WEB-INF/index.jsp")
+    })
+    public String index() {
         return SUCCESS;
     }
 
