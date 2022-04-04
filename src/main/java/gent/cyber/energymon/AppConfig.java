@@ -23,30 +23,27 @@ public class AppConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        super.configure(http);
 
         http.cors().and().csrf().disable();
 
         http
                 .authorizeRequests()
-                    .antMatchers("/payment.action").access("hasRole('ROLE_USER')")
+                    .antMatchers("/").access("hasRole('ROLE_USER')")
                     .antMatchers("/reading.action").access("hasRole('ROLE_USER')")
-                    .antMatchers("/report.action").access("hasRole('ROLE_USER')")
-                    .anyRequest().authenticated()
                     .and()
                 .formLogin()
-                    .loginPage("/dashboard/login.html")
-                    .loginProcessingUrl("/dashboard/process-login.html")
-                    .defaultSuccessUrl("/dashboard/welcome.html")
-                    .failureUrl("/dashboard/login.html?error")
-                    .usernameParameter("username").
-                    passwordParameter("password")
+                    .loginPage("/auth/login.action")
+                    .loginProcessingUrl("/auth/process-login.action")
+                    .defaultSuccessUrl("/")
+                    .failureUrl("/auth/login.action?error")
+                    .usernameParameter("username")
+                    .passwordParameter("password")
                     .and()
                 .logout()
-                    .logoutUrl("/dashboard/logout.html")
-                    .logoutSuccessUrl("/dashboard/login.html?logout").and()
+                    .logoutUrl("/auth/logout.action?logout")
+                    .logoutSuccessUrl("/auth/login.action?logout").and()
                 .exceptionHandling()
-                    .accessDeniedPage("/dashboard/accessDenied.html");
+                    .accessDeniedPage("/auth/accessDenied.action");
     }
 
     @Bean

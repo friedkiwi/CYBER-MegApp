@@ -14,9 +14,6 @@ import java.util.logging.Logger;
 public class IndexAction extends ActionSupport {
     private transient final Logger log = Logger.getLogger(this.getClass().getName());
 
-    private String username;
-    private String password;
-
 
     @Override
     public String execute() {
@@ -45,30 +42,5 @@ public class IndexAction extends ActionSupport {
 
     public double getBalance() {
         return PaymentsUtil.getPaymentBalance();
-    }
-
-
-    public String login() {
-        return SUCCESS;
-    }
-
-    public String accessDenied() {
-        return SUCCESS;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 }

@@ -15,7 +15,7 @@
 <s:if test="%{#parameters.logout != null}">
   Logout successfully
 </s:if>
-<s:form method="post" action="/dashboard/process-login.html">
+<s:form method="post" action="/auth/process-login.action">
   <s:textfield label="Username" name="username"></s:textfield>
   <s:password label="Password" name="password"></s:password>
   <s:submit value="Login" align="left"></s:submit>
