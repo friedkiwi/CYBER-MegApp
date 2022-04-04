@@ -9,13 +9,7 @@
 
     <package name="energymon" extends="struts-default">
 
-        <action name="report" class="gent.cyber.energymon.actions.ReportAction" method="execute">
-            <result name="success">WEB-INF/report.jsp</result>
-        </action>
-        <action name="auth" class="gent.cyber.energymon.actions.AuthenticationAction" method="execute">
-            <result name="success">WEB-INF/login.jsp</result>
-            <result name="accessDenied">WEB-INF/accessDenied.jsp</result>
-        </action>
+
     </package>
 
 </struts>
