@@ -9,13 +9,6 @@
 
     <package name="energymon" extends="struts-default">
 
-        <action name="reading" class="gent.cyber.energymon.actions.ReadingAction" method="execute">
-            <result name="success">WEB-INF/reading.jsp</result>
-            <result name="input">WEB-INF/reading.jsp</result>
-            <result name="saved" type="redirect">
-                <param name="location">/</param>
-            </result>
-        </action>
         <action name="report" class="gent.cyber.energymon.actions.ReportAction" method="execute">
             <result name="success">WEB-INF/report.jsp</result>
         </action>
