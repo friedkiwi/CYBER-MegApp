@@ -6,7 +6,9 @@ Simple web application to keep track of EV charging energy consumption.
 
 ### Phase 1: EnergyMon
 * ~~Basic functionality~~
-* Basic authentication
+* ~~Basic authentication~~
+* Use templated pages
+* Move into `/energymon` namespace
 * SAML integration
 * code cleanup
   * dependency version management
