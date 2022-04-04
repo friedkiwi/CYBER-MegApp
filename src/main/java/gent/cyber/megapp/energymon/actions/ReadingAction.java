@@ -1,8 +1,8 @@
-package gent.cyber.energymon.actions;
+package gent.cyber.megapp.energymon.actions;
 
 import com.opensymphony.xwork2.ActionSupport;
-import gent.cyber.energymon.utils.HibernateUtil;
-import gent.cyber.energymon.models.MeterReading;
+import gent.cyber.megapp.energymon.utils.HibernateUtil;
+import gent.cyber.megapp.energymon.models.MeterReading;
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Namespace;
 import org.apache.struts2.convention.annotation.Result;

@@ -1,7 +1,7 @@
-package gent.cyber.energymon.utils;
+package gent.cyber.megapp.energymon.utils;
 
-import gent.cyber.energymon.models.EnergyPayment;
-import gent.cyber.energymon.models.MeterReading;
+import gent.cyber.megapp.energymon.models.EnergyPayment;
+import gent.cyber.megapp.energymon.models.MeterReading;
 import org.hibernate.Session;
 
 import java.util.Date;

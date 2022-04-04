@@ -7,7 +7,7 @@
 
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>gent.cyber.energymon.AppConfig</param-value>
+        <param-value>gent.cyber.megapp.AppConfig</param-value>
     </context-param>
 
     <context-param>

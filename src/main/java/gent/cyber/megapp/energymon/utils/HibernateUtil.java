@@ -1,4 +1,4 @@
-package gent.cyber.energymon.utils;
+package gent.cyber.megapp.energymon.utils;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;

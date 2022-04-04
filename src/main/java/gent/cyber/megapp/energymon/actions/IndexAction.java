@@ -1,15 +1,13 @@
-package gent.cyber.energymon.actions;
+package gent.cyber.megapp.energymon.actions;
 
 import com.opensymphony.xwork2.ActionSupport;
-import gent.cyber.energymon.utils.PaymentsUtil;
-import gent.cyber.energymon.utils.ReadingsUtil;
-import gent.cyber.energymon.models.EnergyPayment;
-import gent.cyber.energymon.models.MeterReading;
+import gent.cyber.megapp.energymon.utils.PaymentsUtil;
+import gent.cyber.megapp.energymon.utils.ReadingsUtil;
+import gent.cyber.megapp.energymon.models.EnergyPayment;
+import gent.cyber.megapp.energymon.models.MeterReading;
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Namespace;
 import org.apache.struts2.convention.annotation.Result;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;

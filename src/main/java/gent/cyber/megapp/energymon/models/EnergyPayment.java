@@ -1,4 +1,4 @@
-package gent.cyber.energymon.models;
+package gent.cyber.megapp.energymon.models;
 
 import javax.persistence.*;
 import java.io.Serializable;

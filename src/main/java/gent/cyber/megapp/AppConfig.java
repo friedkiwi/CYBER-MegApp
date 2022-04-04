@@ -1,4 +1,4 @@
-package gent.cyber.energymon;
+package gent.cyber.megapp;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -16,7 +16,7 @@ import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 @Configuration
-@ComponentScan("gent.cyber.energymon")
+@ComponentScan("gent.cyber.megapp.energymon")
 @EnableTransactionManagement
 @EnableWebSecurity
 public class AppConfig extends WebSecurityConfigurerAdapter {

@@ -14,7 +14,7 @@
         <property name="show_sql">true</property>
 
 
-        <mapping class="gent.cyber.energymon.models.MeterReading" />
-        <mapping class="gent.cyber.energymon.models.EnergyPayment" />
+        <mapping class="gent.cyber.megapp.energymon.models.MeterReading" />
+        <mapping class="gent.cyber.megapp.energymon.models.EnergyPayment" />
     </session-factory>
 </hibernate-configuration>
