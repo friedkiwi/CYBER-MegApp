@@ -1,15 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-         pageEncoding="ISO-8859-1"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="s" uri="/struts-tags" %>
-<html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <title>Access Denied Page</title>
-</head>
-<body>
+<%@ taglib prefix="sb" uri="/struts-bootstrap-tags" %>
+<%@ taglib prefix="ux" tagdir="/WEB-INF/tags/ux" %>
 
-<h3>Access Denied Page</h3>
-<s:a namespace="/dashboard" action="login">Login</s:a>
-
-</body>
-</html>
+<ux:blankbody>
+<h3>Access Denied</h3>
+<s:a namespace="/" action="login">Login</s:a>
+</ux:blankbody>
