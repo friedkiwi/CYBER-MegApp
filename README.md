@@ -9,11 +9,11 @@ Simple web application to keep track of EV charging energy consumption.
 * ~~Basic authentication~~
 * ~~Use templated pages~~
 * ~~Move into `/energymon` namespace~~
-* SAML integration
-* code cleanup
+* ~~code cleanup~~
   * ~~dependency version management~~
-  * acunetix/burp automated scan and fixes
 
 ### Phase 2: CYBER Meg-App
 * retool into CYBER Meg-App
+* add user management
 * add basic lighting control
+* add front gate control
