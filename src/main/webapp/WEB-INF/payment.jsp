@@ -52,7 +52,7 @@
     <div class="container" role="main">
         <h1>Submit payment</h1>
         <p>&nbsp;</p>
-        <s:form action="payment" theme="bootstrap" cssClass="form-horizontal">
+        <s:form namespace="energymon" action="payment" theme="bootstrap" cssClass="form-horizontal">
             <s:textfield name="energyPaymentBean.amountPaid" label="Amount paid" />
             <s:submit value="Submit" />
         </s:form>

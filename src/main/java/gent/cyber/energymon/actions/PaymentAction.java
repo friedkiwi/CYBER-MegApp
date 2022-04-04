@@ -3,6 +3,9 @@ package gent.cyber.energymon.actions;
 import com.opensymphony.xwork2.ActionSupport;
 import gent.cyber.energymon.utils.HibernateUtil;
 import gent.cyber.energymon.models.EnergyPayment;
+import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.Namespace;
+import org.apache.struts2.convention.annotation.Result;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -10,12 +13,18 @@ import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+@Namespace("/energymon")
 public class PaymentAction extends ActionSupport {
     private transient final Logger log = Logger.getLogger(this.getClass().getName());
     private EnergyPayment energyPaymentBean;
 
-    @Override
-    public String execute() {
+
+    @Action(value = "payment", results = {
+            @Result(name = SUCCESS, location = "/WEB-INF/payment.jsp"),
+            @Result(name = "input", location = "/WEB-INF/payment.jsp"),
+            @Result(name = "saved", type = "redirectAction", params = {"namespace", "/energymon", "actionName", "index"})
+    })
+    public String payment() {
         if (energyPaymentBean != null) {
             Transaction transaction = null;
             try (Session session = HibernateUtil.getSessionFactory().openSession()) {
