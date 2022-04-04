@@ -18,7 +18,7 @@ public class ReportAction extends ActionSupport {
     private transient final Logger log = Logger.getLogger(this.getClass().getName());
 
     @Action(value = "report", results = {
-            @Result(name = SUCCESS, location = "/WEB-INF/report.jsp"),
+            @Result(name = SUCCESS, location = "/WEB-INF/energymon/report.jsp"),
     })
     public String execute() {
         return SUCCESS;

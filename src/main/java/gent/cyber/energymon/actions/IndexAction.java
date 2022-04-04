@@ -25,7 +25,7 @@ public class IndexAction extends ActionSupport {
     }
 
     @Action(value = "index", results = {
-            @Result(name = SUCCESS, location = "/WEB-INF/index.jsp")
+            @Result(name = SUCCESS, location = "/WEB-INF/energymon/index.jsp")
     })
     public String index() {
         return SUCCESS;

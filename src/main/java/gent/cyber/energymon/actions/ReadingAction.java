@@ -19,8 +19,8 @@ public class ReadingAction extends ActionSupport {
     private MeterReading meterReadingBean;
 
     @Action(value = "reading", results = {
-            @Result(name = SUCCESS, location = "/WEB-INF/reading.jsp"),
-            @Result(name = "input", location = "/WEB-INF/reading.jsp"),
+            @Result(name = SUCCESS, location = "/WEB-INF/energymon/reading.jsp"),
+            @Result(name = "input", location = "/WEB-INF/energymon/reading.jsp"),
             @Result(name = "saved", type = "redirectAction", params = {"namespace", "/energymon", "actionName", "index"})
     })
     public String reading() {

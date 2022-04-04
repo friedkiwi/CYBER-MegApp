@@ -20,8 +20,8 @@ public class PaymentAction extends ActionSupport {
 
 
     @Action(value = "payment", results = {
-            @Result(name = SUCCESS, location = "/WEB-INF/payment.jsp"),
-            @Result(name = "input", location = "/WEB-INF/payment.jsp"),
+            @Result(name = SUCCESS, location = "/WEB-INF/energymon/payment.jsp"),
+            @Result(name = "input", location = "/WEB-INF/energymon/payment.jsp"),
             @Result(name = "saved", type = "redirectAction", params = {"namespace", "/energymon", "actionName", "index"})
     })
     public String payment() {
