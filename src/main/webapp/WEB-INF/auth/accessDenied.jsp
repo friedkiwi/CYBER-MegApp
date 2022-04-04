@@ -5,5 +5,5 @@
 
 <ux:blankbody>
 <h3>Access Denied</h3>
-<s:a namespace="/" action="login">Login</s:a>
+<s:a namespace="/auth" action="login">Login</s:a>
 </ux:blankbody>

@@ -1,4 +1,4 @@
-package gent.cyber.megapp.energymon.actions;
+package gent.cyber.megapp.authentication.actions;
 
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.convention.annotation.Action;
