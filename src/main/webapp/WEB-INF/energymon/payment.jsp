@@ -9,5 +9,6 @@
         <s:form namespace="energymon" action="payment" theme="bootstrap" cssClass="form-horizontal">
             <s:textfield name="energyPaymentBean.amountPaid" label="Amount paid" />
             <s:submit value="Submit" />
+            <s:hidden name="%{#attr._csrf.parameterName}"  value="%{#attr._csrf.token}"/>
         </s:form>
 </ux:body>

@@ -9,5 +9,6 @@
     <s:form namespace="/energymon" action="reading" theme="bootstrap" cssClass="form-horizontal">
         <s:textfield name="meterReadingBean.reading" label="Current meter reading" />
         <s:submit value="Submit" />
+        <s:hidden name="%{#attr._csrf.parameterName}"  value="%{#attr._csrf.token}"/>
     </s:form>
 </ux:body>

@@ -16,5 +16,6 @@
   <s:textfield label="Username" name="username"></s:textfield>
   <s:password label="Password" name="password"></s:password>
   <s:submit value="Login" align="left"></s:submit>
+  <s:hidden name="%{#attr._csrf.parameterName}"  value="%{#attr._csrf.token}"/>
 </s:form>
 </ux:blankbody>
