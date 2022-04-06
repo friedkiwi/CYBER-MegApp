@@ -1,6 +1,7 @@
 package gent.cyber.megapp.energymon.actions;
 
-import com.opensymphony.xwork2.ActionSupport;
+
+import gent.cyber.megapp.authentication.AuthenticatedActionSupport;
 import gent.cyber.megapp.energymon.utils.PaymentsUtil;
 import gent.cyber.megapp.energymon.utils.ReadingsUtil;
 import gent.cyber.megapp.energymon.models.EnergyPayment;
@@ -13,7 +14,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 @Namespace("/energymon")
-public class IndexAction extends ActionSupport {
+public class IndexAction extends AuthenticatedActionSupport {
     private transient final Logger log = Logger.getLogger(this.getClass().getName());
 
 

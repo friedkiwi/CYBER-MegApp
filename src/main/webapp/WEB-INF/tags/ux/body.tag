@@ -16,7 +16,7 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
     <a class="navbar-brand" href="#">EnergyMon</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -38,6 +38,14 @@
             <li class="nav-item">
                 <s:url var="report_url" action="report" namespace="/energymon"/>
                 <s:a href="%{report_url}" cssClass="nav-link">Generate report</s:a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="navbar-collapse collapse order-3 dual-collapse2">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#"><s:property value="username" /></a>
             </li>
         </ul>
     </div>

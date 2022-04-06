@@ -1,6 +1,7 @@
 package gent.cyber.megapp.energymon.actions;
 
-import com.opensymphony.xwork2.ActionSupport;
+
+import gent.cyber.megapp.authentication.AuthenticatedActionSupport;
 import gent.cyber.megapp.energymon.models.EnergyPayment;
 import gent.cyber.megapp.energymon.models.MeterReading;
 import gent.cyber.megapp.energymon.utils.PaymentsUtil;
@@ -14,7 +15,7 @@ import java.util.logging.Logger;
 import java.util.List;
 
 @Namespace("/energymon")
-public class ReportAction extends ActionSupport {
+public class ReportAction extends AuthenticatedActionSupport {
     private transient final Logger log = Logger.getLogger(this.getClass().getName());
 
     @Action(value = "report", results = {

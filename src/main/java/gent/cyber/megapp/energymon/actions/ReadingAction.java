@@ -1,6 +1,6 @@
 package gent.cyber.megapp.energymon.actions;
 
-import com.opensymphony.xwork2.ActionSupport;
+import gent.cyber.megapp.authentication.AuthenticatedActionSupport;
 import gent.cyber.megapp.energymon.utils.HibernateUtil;
 import gent.cyber.megapp.energymon.models.MeterReading;
 import org.apache.struts2.convention.annotation.Action;
@@ -14,7 +14,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 @Namespace("/energymon")
-public class ReadingAction extends ActionSupport {
+public class ReadingAction extends AuthenticatedActionSupport {
     private transient final Logger log = Logger.getLogger(this.getClass().getName());
     private MeterReading meterReadingBean;
 
