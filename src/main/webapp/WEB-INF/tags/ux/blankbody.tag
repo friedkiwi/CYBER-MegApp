@@ -5,7 +5,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>EnergyMon</title>
+    <title>CYBER</title>
 
     <sb:head/>
     <style>
