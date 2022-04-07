@@ -4,10 +4,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>gent.cyber.webapps</groupId>
-    <artifactId>EnergyMon</artifactId>
+    <groupId>gent.cyber.megapp</groupId>
+    <artifactId>MegApp</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>EnergyMon</name>
+    <name>CYBER MegApp</name>
     <packaging>jar</packaging>
 
     <properties>
