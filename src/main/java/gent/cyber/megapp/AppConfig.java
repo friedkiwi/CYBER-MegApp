@@ -31,6 +31,7 @@ public class AppConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                     .antMatchers("/").access("hasRole('ROLE_USER')")
                     .antMatchers("/energymon/**").access("hasRole('ROLE_USER')")
+                    .antMatchers("/auth/changePassword**").access("hasRole('ROLE_USER')")
                     .and()
                 .formLogin()
                     .loginPage("/auth/login.action")

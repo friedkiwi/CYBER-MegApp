@@ -1,12 +1,14 @@
 <%@ tag description="ux:body tag" pageEncoding="UTF-8" %>
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <%@ taglib prefix="sb" uri="/struts-bootstrap-tags" %>
+<%@ taglib prefix="sj" uri="/struts-jquery-tags" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>EnergyMon</title>
 
+    <sj:head/>
     <sb:head/>
     <style>
         body {
@@ -16,7 +18,9 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top nav-pills">
     <a class="navbar-brand" href="#">EnergyMon</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -43,9 +47,18 @@
     </div>
 
     <div class="navbar-collapse collapse order-3 dual-collapse2">
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav ml-auto nav nav-pills">
             <li class="nav-item">
-                <a class="nav-link" href="#"><s:property value="username" /></a>
+                <div class="dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="userMenuDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><s:property value="username" /></a>
+
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userMenuDropdown">
+                        <s:url var="change_password_url" action="changePassword" namespace="/auth"/>
+                        <s:a href="%{change_password_url}" cssClass="dropdown-item">Update password</s:a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item">Log out</a>
+                    </div>
+                </div>
             </li>
         </ul>
     </div>
