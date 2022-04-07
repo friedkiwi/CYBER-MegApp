@@ -3,7 +3,7 @@
 <%@ taglib prefix="sb" uri="/struts-bootstrap-tags" %>
 <%@ taglib prefix="ux" tagdir="/WEB-INF/tags/ux" %>
 
-<ux:blankbody>
+<ux:body>
 <h3>Access Denied</h3>
 <s:a namespace="/auth" action="login">Login</s:a>
-</ux:blankbody>
+</ux:body>

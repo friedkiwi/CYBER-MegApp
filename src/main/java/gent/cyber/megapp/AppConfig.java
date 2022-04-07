@@ -29,9 +29,14 @@ public class AppConfig extends WebSecurityConfigurerAdapter {
 
         http
                 .authorizeRequests()
-                    .antMatchers("/").access("hasRole('ROLE_USER')")
+                    // allow front page access
+                    .antMatchers("/").permitAll()
+                    // allow unauthenticated users to log in
+                    .antMatchers("/auth/process-login.action").permitAll()
+                    // allow authenticated users to change their passwords
+                    .antMatchers("/auth/changePassword.action").access("hasRole('ROLE_USER')")
+                    // restrict internal applications to logged in users
                     .antMatchers("/energymon/**").access("hasRole('ROLE_USER')")
-                    .antMatchers("/auth/changePassword**").access("hasRole('ROLE_USER')")
                     .and()
                 .formLogin()
                     .loginPage("/auth/login.action")
@@ -43,7 +48,7 @@ public class AppConfig extends WebSecurityConfigurerAdapter {
                     .and()
                 .logout()
                     .logoutUrl("/auth/logout.action?logout")
-                    .logoutSuccessUrl("/auth/login.action?logout").and()
+                    .logoutSuccessUrl("/").and()
                 .exceptionHandling()
                     .accessDeniedPage("/auth/accessDenied.action");
     }

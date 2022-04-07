@@ -20,7 +20,7 @@ public class AuthenticationAction extends ActionSupport {
     }
 
     @Action(value = "index", results = {
-            @Result(name = SUCCESS, type = "redirectAction", params = {"namespace", "auth", "actionName", "login"})
+            @Result(name = SUCCESS, type = "redirectAction", params = {"namespace", "/auth", "actionName", "login"})
     })
     public String index() {
         return SUCCESS;
@@ -34,7 +34,7 @@ public class AuthenticationAction extends ActionSupport {
     }
 
     @Action(value = "welcome", results = {
-            @Result(name = SUCCESS, type="redirectAction", params = {"namespace", "energymon", "actionName", "index"})
+            @Result(name = SUCCESS, type="redirectAction", params = {"namespace", "/energymon", "actionName", "index"})
     })
     public String welcome() {
         return SUCCESS;

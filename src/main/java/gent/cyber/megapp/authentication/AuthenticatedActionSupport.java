@@ -12,4 +12,16 @@ public class AuthenticatedActionSupport extends ActionSupport {
         }
         return "Anonymous";
     }
+
+    public boolean isAuthenticated() {
+        try {
+            UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+            if (userDetails.getUsername() != null)
+                return true;
+            else
+                return false;
+        } catch (ClassCastException e) {
+            return false;
+        }
+    }
 }

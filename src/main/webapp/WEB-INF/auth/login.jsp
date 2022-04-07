@@ -3,9 +3,10 @@
 <%@ taglib prefix="sb" uri="/struts-bootstrap-tags" %>
 <%@ taglib prefix="ux" tagdir="/WEB-INF/tags/ux" %>
 
-<ux:blankbody>
+<ux:body>
 
-<h3>Login Page</h3>
+<h1>Login Page</h1>
+  <p>&nbsp;</p>
 <s:if test="%{#parameters.error != null}">
   Invalid username or password!
 </s:if>
@@ -18,4 +19,4 @@
   <s:submit value="Login" align="left"></s:submit>
   <s:hidden name="%{#attr._csrf.parameterName}"  value="%{#attr._csrf.token}"/>
 </s:form>
-</ux:blankbody>
+</ux:body>
