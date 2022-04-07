@@ -6,15 +6,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>EnergyMon</title>
+    <title>CYBER.gent</title>
 
     <sj:head/>
     <sb:head/>
     <style>
         body {
             padding-top: 80px; /* 60px to make the container go all the way to the bottom of the topbar */
+            background-color: yellow;
+        }
+        .logo {
+            width: 60%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 15%;
+            display: block;
         }
     </style>
+    <meta name="wot-verification" content="29cd031202081d16c161"/>
 </head>
 <body>
 
@@ -31,6 +40,7 @@
             <li class="nav-item">
                 <s:a href="./" cssClass="nav-link">Home</s:a>
             </li>
+            <s:if test="%{authenticated}">
             <li class="nav-item">
                 <div class="dropdown">
                     <a href="#" class="nav-link dropdown-toggle" id="energyMonDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">EnergyMon</a>
@@ -46,12 +56,14 @@
                     </div>
                 </div>
             </li>
+            </s:if>
         </ul>
     </div>
 
     <div class="navbar-collapse collapse order-3 dual-collapse2">
         <ul class="navbar-nav ml-auto nav nav-pills">
             <li class="nav-item">
+                <s:if test="%{authenticated}">
                 <div class="dropdown">
                     <a href="#" class="nav-link dropdown-toggle" id="userMenuDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><s:property value="username" /></a>
 
@@ -59,9 +71,14 @@
                         <s:url var="change_password_url" action="changePassword" namespace="/auth"/>
                         <s:a href="%{change_password_url}" cssClass="dropdown-item">Update password</s:a>
                         <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item">Log out</a>
+                        <a href="/auth/logout.action?logout" class="dropdown-item">Log out</a>
                     </div>
                 </div>
+                </s:if>
+                <s:else>
+                    <s:url var="login_url" action="login" namespace="/auth"/>
+                    <s:a href="%{login_url}" cssClass="nav-link">Login</s:a>
+                </s:else>
             </li>
         </ul>
     </div>
